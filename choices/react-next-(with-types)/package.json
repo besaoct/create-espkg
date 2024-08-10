@@ -1,0 +1,38 @@
+{
+    "name": "your-package-name",
+    "version": "0.0.0",
+    "type": "module",
+    "main": "dist/index.js",
+    "types": "dist/types/index.d.ts", 
+    "scripts": {
+      "build": "node build.js",
+      "prepare": "npm run build",
+      "prepublishOnly": "npm run build",
+      "test": "jest"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/{username}/{repo}"
+    },
+    "keywords": [
+    "node package"
+    ],
+    "homepage": "https://github.com/{username}/{repo}#readme",
+    "author": "Shafin",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/{username}/{repo}/issues"
+    },
+    "description": "",
+    "files": [
+      "dist",
+      "README.md",
+      "LICENSE"
+    ],
+    "engines": {
+      "node": ">=14.0.0"
+    },
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org/"
+      }
+  }

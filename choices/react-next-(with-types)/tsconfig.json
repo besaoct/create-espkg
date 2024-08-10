@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+      "target": "ES2020",                     // ECMAScript version target
+      "module": "ESNext",                     // Use ESNext modules
+      "jsx": "react-jsx",                     // Enable JSX syntax for React
+      "rootDir": "./src",                     // Root directory of the source files
+      "strict": true,                         // Enable strict type-checking options
+      "moduleResolution": "Node",             // Module resolution strategy (Node.js)
+      "esModuleInterop": true,                // Enable interoperability between CommonJS and ES Modules
+      "declaration": true,                    // Generate .d.ts declaration files
+      "declarationDir": "./dist/types",       // Directory for generated .d.ts files
+      "outDir": "./dist/types",
+      "allowSyntheticDefaultImports": true,   // Allow default imports from modules with no default export
+      "skipLibCheck": true,                   // Skip type checking of all declaration files (*.d.ts)
+      "forceConsistentCasingInFileNames": true, // Ensure file casing consistency
+      "baseUrl": ".",                         // Base URL for the project
+      "paths": {                              // Aliases for module imports
+        "*": ["node_modules/*"]
+      },
+      "lib": ["DOM", "ESNext"]                // Include DOM and ESNext features in the library
+    },
+    "include": ["src/**/*.ts", "src/**/*.tsx"], // Include all .ts and .tsx files in the src directory
+    "exclude": ["node_modules", "dist"]         // Exclude node_modules and dist directories
+  }
