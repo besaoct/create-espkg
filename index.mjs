@@ -3,6 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import inquirer from 'inquirer';
 import { execSync } from 'child_process';
+import { console } from 'console';
 
 // Derive __dirname from import.meta.url
 const __filename = fileURLToPath(import.meta.url);
