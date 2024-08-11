@@ -3,6 +3,7 @@
     "installation": "Installation",
     "templates": "Templates",
     "publish":"Publish",
+    
     "about": {
       "title": "About",
       "type": "page"
