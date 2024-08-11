@@ -3,7 +3,7 @@ import { DocsThemeConfig } from 'nextra-theme-docs'
 import { MessageCircle} from 'lucide-react'
 const config: DocsThemeConfig = {
   head:<>
-  <meta name="description" content="Node package builder" />
+  <meta name="description" content="Npm package builder" />
   <meta name="title" content="create-espkg" />
   </>,
   primaryHue:0, primarySaturation:0,
@@ -23,10 +23,10 @@ const config: DocsThemeConfig = {
     return {
       titleTemplate: '%s | create-espkg',
       defaultTitle:'create-espkg',
-      description:'Node package builder',
+      description:'Npm package builder',
       openGraph:{
         title: 'create-espkg',
-        description:'Node package builder'
+        description:'Npm package builder'
       }
     }
   }

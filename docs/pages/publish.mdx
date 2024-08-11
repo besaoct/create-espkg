@@ -1,6 +1,6 @@
 # Publish
 
-Publishing your node package to the npm registry involves a few straightforward steps. Follow the guide below to get your package live:
+Publishing your npm package to the npm registry involves a few straightforward steps. Additionally, you can test your package locally before publishing using `npm link`. Follow the guide below to get your package live:
 
 ## Prepare Your Package
 
@@ -20,6 +20,60 @@ Before publishing, ensure your package is ready:
   - `repository.url`: The URL of your project's repository.
   - `homepage`: The URL for your package's homepage.
   - `bugs.url`: The URL where users can report issues.
+
+## Test Locally with `npm link`
+
+Before publishing, it&apos;s a good idea to test your package in a real project environment. Here&apos;s how you can do that using `npm link`:
+
+### Link Your Package Globally
+
+In the root directory of your package, run:
+
+```bash
+npm link
+```
+
+This command creates a global symlink to your package, allowing you to use it in other projects as if it were installed from npm.
+
+### Link Your Package in a Test Project
+
+Navigate to a test project where you want to try out your package:
+
+```bash
+cd /path/to/your/test/project
+```
+
+Then link the globally installed package:
+
+```bash
+npm link your-package-name
+```
+
+Replace `your-package-name` with the name specified in your `package.json`. This command links your package to the test project, allowing you to import and use it as if it were a normal npm package.
+
+### Test Your Package
+
+Now, you can import your package in the test project and test it as you normally would:
+
+```javascript
+import { exampleFn, YourComponent, } from 'your-package-name';
+
+// Use exampleFn, YourComponent in your test project
+```
+
+### Unlink After Testing
+
+After testing, you can remove the symlink from your test project:
+
+```bash
+npm unlink your-package-name
+```
+
+And if you want to remove the global link:
+
+```bash
+npm unlink -g your-package-name
+```
 
 ## Login to npm
 
