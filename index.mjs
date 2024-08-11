@@ -12,25 +12,53 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 async function main() {
- // Get the project name from the command line arguments
- const args = process.argv.slice(2);
+  // Get the project name from the command line arguments
+  const args = process.argv.slice(2);
 
- // Prompt for package name
- const { packageName } = await inquirer.prompt([
-   { type: 'input', name: 'packageName', message: 'Enter the package name:' }
- ]);
+  // Prompt for package name
+  const { packageName } = await inquirer.prompt([
+    { type: 'input', name: 'packageName', message: 'Enter the package name:' }
+  ]);
 
- // Use the first argument as the project name or fall back to the package name
- const projectName = args[0] || packageName;
+  // Use the first argument as the project name or fall back to the package name
+  const projectName = args[0] || packageName;
+  const projectPath = path.join(process.cwd(), projectName);
 
- // Prepare project directory
- const projectPath = path.join(process.cwd(), projectName);
- fs.ensureDirSync(projectPath);
+  // Check if directory exists and is not empty
+  const isDirectoryEmpty = await fs.pathExists(projectPath) && (await fs.readdir(projectPath)).length === 0;
 
- // Prompt for author name
- const { author } = await inquirer.prompt([
-   { type: 'input', name: 'author', message: 'Enter the author name:' }
- ]);
+  if (!isDirectoryEmpty) {
+    const { action } = await inquirer.prompt([
+      {
+        type: 'list',
+        name: 'action',
+        message: 'The directory is not empty. What would you like to do?',
+        choices: [
+          'Clear the directory and proceed',
+          'Merge with existing files',
+          'Cancel'
+        ]
+      }
+    ]);
+
+    if (action === 'Clear the directory and proceed') {
+      // Clear the directory
+      await fs.emptyDir(projectPath);
+    } else if (action === 'Merge with existing files') {
+      // Proceed without clearing
+    } else {
+      console.log('Operation cancelled.');
+      process.exit(0);
+    }
+  } else {
+    // Ensure directory is created if it does not exist
+    await fs.ensureDir(projectPath);
+  }
+
+  // Prompt for author name
+  const { author } = await inquirer.prompt([
+    { type: 'input', name: 'author', message: 'Enter the author name:' }
+  ]);
 
   // Prompt for template type
   const { templateType } = await inquirer.prompt([
@@ -40,7 +68,7 @@ async function main() {
       message: 'Choose a template:',
       choices: [
         'javascript (with types)',
-        'react/next (with types)'
+        'react-next (with types)'
       ]
     }
   ]);
@@ -64,8 +92,8 @@ async function main() {
 
   await fs.writeJson(packageJsonPath, packageJson, { spaces: 2 });
 
-// If the javascript template is chosen, install the latest dependencies
-if (templateType === 'javascript (with types)') {
+  // If the javascript template is chosen, install the latest dependencies
+  if (templateType === 'javascript (with types)') {
     const devDependencies = [
       '@types/jest',
       '@types/node',
@@ -80,24 +108,25 @@ if (templateType === 'javascript (with types)') {
     execSync(`npm install --save-dev ${devDependencies.join(' ')}`, { cwd: projectPath, stdio: 'inherit' });
   }
 
-// If the react/next template is chosen, install the latest dependencies
-if (templateType === 'react/next (with types)') {
+  // If the react-next template is chosen, install the latest dependencies
+  if (templateType === 'react-next (with types)') {
     const devDependencies = [
       '@types/jest',
       '@types/node',
       '@types/react',
-      'react',
-      'react-dom',
       'esbuild',
       'esbuild-plugin-d.ts',
       'jest',
       'ts-jest',
-      'typescript'
+      'typescript',
+      'next@latest', 
+      'react@latest', 
+      'react-dom@latest'
     ];
 
     const peerDependencies = [
-      'react',
-      'react-dom'
+      'react@latest',
+      'react-dom@latest'
     ];
 
     console.log('Installing devDependencies...');

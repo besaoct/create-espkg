@@ -2,17 +2,17 @@
 node_modules/
 
 # Ignore src directory (if you're publishing the built files from dist)
-src/
+# src/
 
 # Ignore build scripts
-build.js
+# build.js
 
 # Ignore TypeScript config files
-tsconfig.json
+# tsconfig.json
 
 # Ignore test files and config
-tests/
-jest.config.js
+# test/
+# jest.config.js
 
 # Ignore log files
 *.log
