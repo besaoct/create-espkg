@@ -2,6 +2,7 @@ import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
 import { MessageCircle} from 'lucide-react'
 const config: DocsThemeConfig = {
+
   logo: <span>CREATE-ESPKG</span>,
   project: {
     link: 'https://github.com/besaoct/create-espkg',
@@ -14,6 +15,11 @@ const config: DocsThemeConfig = {
   footer: {
     text: '©️ Shafin (@besaoct)',
   },
+  useNextSeoProps() {
+    return {
+      titleTemplate: '%s - CREATE-ESPKG'
+    }
+  }
 }
 
 export default config
