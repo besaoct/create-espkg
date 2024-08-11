@@ -1,14 +1,14 @@
 {
   "name": "create-espkg",
   "author": "Shafin",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A CLI tool designed to streamline the creation of Node.js packages with built-in support for JavaScript/TypeScript and React/Next.js projects.",
   "main": "./index.mjs",
   "bin": {
-    "create-espkg": "./index.mjs"
+    "create-espkg": "index.mjs"
   },
   "scripts": {
-    "create-espkg":"node ./index.mjs",
+    "create-espkg": "node ./index.mjs",
     "prepublish": "npm run lint",
     "lint": "eslint ."
   },
@@ -30,17 +30,21 @@
     "README.md",
     "LICENSE"
   ],
-  "keywords": ["CLI", "package", "node package generator", "npm creator"],
+  "keywords": [
+    "CLI",
+    "package",
+    "node package generator",
+    "npm creator"
+  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/besaoct/create-espkg"
+    "url": "git+https://github.com/besaoct/create-espkg.git"
   },
   "homepage": "https://github.com/besaoct/create-espkg#readme",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/besaoct/create-espkg/issues"
   },
-
   "dependencies": {
     "fs-extra": "^11.2.0",
     "inquirer": "^10.1.8"
