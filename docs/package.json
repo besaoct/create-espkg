@@ -16,7 +16,7 @@
     "bugs": {
         "url": "https://github.com/besaoct/create-espkg/issues"
     },
-    "homepage": "https://github.com/besaoct/create-espkg#readme",
+    "homepage": "https://create-espkg.vercel.app/",
     "dependencies": {
         "lucide-react": "^0.427.0",
         "next": "latest",
