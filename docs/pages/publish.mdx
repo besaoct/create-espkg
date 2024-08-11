@@ -1,0 +1,77 @@
+# Publish
+
+Publishing your node package to the npm registry involves a few straightforward steps. Follow the guide below to get your package live:
+
+## Prepare Your Package
+
+Before publishing, ensure your package is ready:
+
+- **Build Your Package**: Compile your TypeScript files and generate any necessary type declarations.
+
+  ```bash
+  npm run build
+  ```
+
+- **Verify `package.json`**: Ensure your `package.json` file has all necessary information, including:
+
+  - `name`: Your package name.
+  - `version`: The current version of your package.
+  - `description`: A short description of what your package does.
+  - `repository.url`: The URL of your project's repository.
+  - `homepage`: The URL for your package's homepage.
+  - `bugs.url`: The URL where users can report issues.
+
+## Login to npm
+
+If you&apos;re not already logged in to npm, authenticate with your npm credentials:
+
+```bash
+npm login
+```
+
+You will be prompted to enter your npm username, password, and email address. This step ensures that you have the correct permissions to publish packages.
+
+## Update Your Package Version
+
+For subsequent updates to your package, you need to update the version number in your `package.json` file. Use npm's versioning commands to automate this:
+
+- **Patch Version**: For minor updates or bug fixes, increment the patch version.
+
+  ```bash
+  npm version patch
+  ```
+  This command updates the patch version in `package.json`, commits the change, and tags the new version.
+
+- **Minor Version**: For adding new features that are backwards-compatible, increment the minor version.
+
+  ```bash
+  npm version minor
+  ```
+
+- **Major Version**: For breaking changes, increment the major version.
+
+  ```bash
+  npm version major
+  ```
+
+## Rebuild Your Package
+
+After updating the version number:
+
+- **Rebuild Your Package**:
+
+  ```bash
+  npm run build
+  ```
+
+## Publish Your Package
+
+To publish your package to the npm registry, run:
+
+```bash
+npm publish
+```
+
+This command uploads your package to npm. If it&apos;s the first time you&apos;re publishing the package, it will be available for others to install. For updated versions, the existing package will be replaced with the new version.
+
+By following these steps, your package will be published and available for other developers to use in their projects. Happy coding! 🚀
