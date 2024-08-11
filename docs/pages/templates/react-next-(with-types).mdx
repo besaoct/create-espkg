@@ -1,0 +1,165 @@
+# React/Next.js (with types) Template
+
+The **React/Next.js (with types)** template in `create-espkg` makes it super easy to set up a Node.js package for building stuff with React and Next.js. With TypeScript baked in for strong type safety, this template gives you all the key configs, dependencies, and a clean directory structure right out of the box. You can dive straight into creating components, hooks, and libraries—then just build and publish your package so others can use it in their own React/Next.js projects.
+
+## Project Structure
+
+When you generate a project using the **React/Next.js (with types)** template, your directory structure will look like this:
+
+```
+your-package-name/
+│
+├── LICENSE
+├── README.md
+├── build.js
+├── jest.config.js
+├── package.json
+├── tsconfig.json
+├── src/
+│   ├── index.ts
+│   ├── main.tsx
+│   ├── components/
+│   │   └── Example.tsx
+│   ├── hooks/
+│   │   └── useExample.ts
+│   ├── libs/
+│   │   └── example-lib.ts
+│   ├── types.ts
+│   └── utils/
+│       └── example-util.ts
+└── test/
+    └── index.test.tsx
+```
+
+## Files and Directories
+
+- **LICENSE**: The license file for your project. Replace it with your preferred license.
+
+- **README.md**: The main documentation file for your project. Initially a placeholder, it should be updated with your project's specific information.
+
+- **build.js**: This script builds your project using `esbuild`, which is configured for fast and efficient bundling of both JavaScript and TypeScript code.
+
+- **jest.config.js**: The configuration file for Jest, a testing framework for JavaScript that works well with React and TypeScript.
+
+- **package.json**: The primary configuration file for your Node.js package, including metadata, scripts, dependencies, and more. This file is customized automatically during the project setup.
+
+- **tsconfig.json**: The TypeScript configuration file, setting up the compiler options and project structure for type safety and consistency.
+
+- **src/**: The source directory for your project:
+  - **index.ts**: The entry point of your package.
+  - **main.tsx**: The main file where the core logic of your Next.js application resides.
+  - **components/**: Directory for React components.
+    - **Example.tsx**: A sample component demonstrating the structure.
+  - **hooks/**: Directory for custom React hooks.
+    - **useExample.ts**: A sample hook demonstrating the structure.
+  - **libs/**: Directory for libraries or utility functions.
+    - **example-lib.ts**: A sample library file.
+  - **types.ts**: File for defining TypeScript types used across your project.
+  - **utils/**: Directory for utility functions or reusable code.
+    - **example-util.ts**: A sample utility function.
+
+- **test/**: Directory for test files:
+  - **index.test.tsx**: A sample Jest test file for your React components.
+
+## `package.json` Configuration
+
+The `package.json` file includes several predefined scripts and configurations tailored for your React/Next.js project:
+
+```json
+{
+  "name": "your-package-name",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/types/index.d.ts", 
+  "scripts": {
+    "build": "node build.js",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/{username}/{repo}"
+  },
+  "keywords": [
+    "node package"
+  ],
+  "homepage": "https://github.com/{username}/{repo}#readme",
+  "author": "{author}",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/{username}/{repo}/issues"
+  },
+  "description": "",
+  "files": [
+    "dist/**",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}
+```
+
+Key elements of this configuration:
+
+- **name**: The name of your package.
+- **version**: The initial version of your package.
+- **type**: Indicates that the package uses ES modules.
+- **main**: Points to the main entry file in the `dist/` directory after the build.
+- **types**: Specifies the location of the TypeScript type declarations.
+- **scripts**: 
+  - `build`: Runs the `build.js` script to bundle your project.
+  - `prepare`: Runs the build script automatically before the package is packed and published.
+  - `prepublishOnly`: Ensures the build script runs before publishing.
+  - `test`: Runs Jest to execute tests.
+- **repository**: Metadata about the repository where the package is hosted.
+- **keywords**: Keywords that help others find your package.
+- **homepage**: The URL to the project's homepage.
+- **author**: Your name as the author of the package.
+- **license**: The license under which the package is distributed.
+- **bugs**: URL to the issues page of your repository.
+- **files**: Specifies which files and directories should be included in the published package.
+- **engines**: Specifies the Node.js versions your package is compatible with.
+- **publishConfig**: Configuration related to publishing the package, including the registry.
+
+#### Usage
+
+Once your project is created using this template, you can start developing your React application within the `src/` directory. The provided structure and configurations are designed to help you write clean, maintainable, and scalable code.
+
+#### Installation and Dependencies
+
+The template is pre-configured with essential dependencies:
+
+- **React**: Library for building user interfaces.
+- **React-DOM**: Package for working with the DOM in React applications.
+- **Next.js**: Framework providing server-side rendering and static site generation for React.
+- **TypeScript**: Superset of JavaScript adding static types.
+- **Jest**: Testing framework.
+- **@types/react**, **@types/node**: TypeScript definitions for React and Node.js.
+- **esbuild**: Bundler for JavaScript and TypeScript.
+
+Install these dependencies by navigating to your project directory and running:
+
+```bash
+npm install
+```
+
+#### Testing
+
+The template includes a basic testing setup with Jest. Place your tests in the `test/` directory, using the provided `index.test.tsx` as a reference.
+
+Run tests with:
+
+```bash
+npm test
+```
+
+## Conclusion
+
+With this template, you can focus on developing core functionalities of your node package while benefiting from a well-organized package structure and robust configurations. 

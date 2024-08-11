@@ -1,0 +1,91 @@
+# JavaScript (with types) Template
+
+The **JavaScript (with types)** template provided by `create-espkg` is designed to help you quickly set up a Node.js package that uses TypeScript for type safety while writing JavaScript. This template includes essential configurations and boilerplate code to get you started on your project immediately.
+
+## Project Structure
+
+Here's an overview of the project structure you'll get when you use the **JavaScript (with types)** template:
+
+```
+your-package-name/
+│
+├── LICENSE
+├── README.md
+├── build.js
+├── jest.config.js
+├── package.json
+├── tsconfig.json
+├── src/
+│   ├── index.ts
+│   ├── main.ts
+│   ├── libs/
+│   │   └── lib-example.ts
+│   ├── types.ts
+│   └── utils/
+│       └── util-example.ts
+└── test/
+    └── index.test.ts
+```
+
+## Files and Directories
+
+- **LICENSE**: A placeholder license file. Make sure to update this with your preferred license.
+  
+- **README.md**: The main documentation file for your project. It currently serves as a placeholder, so be sure to update it with details about your project.
+
+- **build.js**: This file is configured to build your project using `esbuild`, a fast bundler and minifier for JavaScript and TypeScript.
+
+- **jest.config.js**: Configuration file for running tests using Jest. Jest is a popular testing framework for JavaScript applications.
+
+- **package.json**: The main configuration file for your Node.js package. It contains metadata about your project, scripts, dependencies, and more. The template automatically customizes this file based on the information you provide during setup.
+
+- **tsconfig.json**: TypeScript configuration file that specifies the compiler options. Even though the project is written in JavaScript, this configuration is included to enable type-checking and other TypeScript features.
+
+- **src/**: This directory contains the source code for your project:
+  - **index.ts**: The entry point of your package.
+  - **main.ts**: A sample main file, where the core logic of your application can reside.
+  - **libs/**: A directory for library or utility functions.
+  - **types.ts**: A file for defining TypeScript types used in the project.
+  - **utils/**: A directory for utility functions, such as reusable code snippets or helpers.
+
+- **test/**: This directory contains test files:
+  - **index.test.ts**: A sample test file using Jest to test your code.
+
+## Scripts
+
+The `package.json` file includes some predefined scripts to help you manage your project:
+
+- **build**: Runs the `build.js` script to bundle your project.
+- **test**: Runs Jest tests defined in the `test/` directory.
+
+You can run these scripts using `npm` or `yarn`:
+
+```bash
+npm run build
+npm test
+```
+
+## Usage
+
+After creating your project with `create-espkg` and the **JavaScript (with types)** template, you can start adding your JavaScript code in the `src/` directory. You can organize your code by creating additional files or folders as needed.
+
+You can also customize the `package.json`, `tsconfig.json`, and other configuration files to suit your project's specific needs.
+
+## Installation and Dependencies
+
+The template comes pre-configured with a set of dependencies and development dependencies:
+
+- **TypeScript**: Even though this is a JavaScript template, TypeScript is included for type safety.
+- **Jest**: For writing and running tests.
+- **esbuild**: For fast and efficient bundling of your JavaScript/TypeScript code.
+- **@types/node** and **@types/jest**: TypeScript type definitions for Node.js and Jest, respectively.
+
+To install these dependencies, simply navigate to your project directory and run:
+
+```bash
+npm install
+```
+
+## Conclusion
+
+The **JavaScript (with types)** template is designed to give you a head start in creating a robust, type-safe Node.js package. It includes everything you need to get started with development and testing, allowing you to focus on writing great code.

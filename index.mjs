@@ -95,12 +95,12 @@ async function main() {
     const packageJsonPath = path.join(projectPath, 'package.json');
     let packageJson = await fs.readJson(packageJsonPath);
 
-    packageJson.name = packageName;
-    packageJson.author = author;
+    packageJson.name = `@besaoct/${packageName}`;
+    packageJson.author = author || '@besaoct';
     packageJson.repository.url = `git+https://github.com/{your-github-username}/${packageName}`;
     packageJson.bugs.url = `https://github.com/{your-github-username}/${packageName}/issues`;
     packageJson.homepage = `https://github.com/{your-github-username}/${packageName}#readme`;
-    packageJson.description = `Node package by ${author}`;
+    packageJson.description = `Node package by ${author || '@besaoct'}`;
 
     await fs.writeJson(packageJsonPath, packageJson, { spaces: 2 });
 
