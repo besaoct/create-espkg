@@ -1,7 +1,7 @@
 {
   "name": "create-espkg",
   "author": "Shafin",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A CLI tool designed to streamline the creation of Node.js packages with built-in support for JavaScript/TypeScript and React/Next.js projects.",
   "main": "index.mjs",
   "bin": {
@@ -45,7 +45,7 @@
     "type": "git",
     "url": "git+https://github.com/besaoct/create-espkg.git"
   },
-  "homepage": "https://github.com/besaoct/create-espkg#readme",
+  "homepage": "https://create-espkg.vercel.app/",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/besaoct/create-espkg/issues"

@@ -2,6 +2,8 @@
 
 **`create-espkg`** is a CLI tool designed to streamline the creation of Node.js packages with built-in support for JavaScript/TypeScript and React/Next.js projects. By leveraging esbuild for fast and efficient builds, this tool helps you quickly set up a project with the necessary configuration and dependencies.
 
+**Read full [documentation here](https://create-espkg.vercel.app/).**
+
 **Table of Contents:**
 
 - [create-espkg](#create-espkg)
