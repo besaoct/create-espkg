@@ -1,7 +1,7 @@
 {
   "name": "create-espkg",
   "author": "Shafin",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A CLI tool designed to streamline the creation of Node.js packages with built-in support for JavaScript/TypeScript and React/Next.js projects.",
   "main": "./index.mjs",
   "bin": {
@@ -33,8 +33,11 @@
   "keywords": [
     "CLI",
     "package",
+    "javaScript package generator",
+    "react package generator",
+    "next.js package generator",
     "node package generator",
-    "npm creator"
+    "node pkg creator"
   ],
   "repository": {
     "type": "git",
