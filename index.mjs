@@ -23,15 +23,32 @@ const cleanup = (message) => {
 process.on('SIGINT', () => cleanup('Process interrupted by user. Exiting...'));
 process.on('SIGTERM', () => cleanup('Process terminated. Exiting...'));
 
+// Function to validate the package name format
+function validatePackageName(name) {
+  const regex = /^[a-z]+(-[a-z]+)*$/; // Regex for a-b format (lowercase letters and hyphen-separated)
+  return regex.test(name) || 'Please enter a valid package name in a-b format (e.g., my-package)';
+}
+
+async function getPackageName() {
+  const { packageName } = await inquirer.prompt([
+    {
+      type: 'input',
+      name: 'packageName',
+      message: 'Enter the package name:',
+      validate: validatePackageName, // Use the validation function here
+    },
+  ]);
+
+  return packageName;
+}
+
 async function main() {
   try {
     // Get the project name from the command line arguments
     const args = process.argv.slice(2);
 
-    // Prompt for package name
-    const { packageName } = await inquirer.prompt([
-      { type: 'input', name: 'packageName', message: 'Enter the package name:' }
-    ]);
+   // Prompt for package name
+   const packageName = await getPackageName();
 
     // Use the first argument as the project name or fall back to the package name
     const projectName = args[0] || packageName;
@@ -100,7 +117,7 @@ async function main() {
     packageJson.repository.url = `git+https://github.com/{your-github-username}/${packageName}`;
     packageJson.bugs.url = `https://github.com/{your-github-username}/${packageName}/issues`;
     packageJson.homepage = `https://github.com/{your-github-username}/${packageName}#readme`;
-    packageJson.description = `Node package by ${author || '@besaoct'}`;
+    packageJson.description = `Npm package by ${author || '@besaoct'}`;
 
     await fs.writeJson(packageJsonPath, packageJson, { spaces: 2 });
 
