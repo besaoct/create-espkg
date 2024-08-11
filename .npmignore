@@ -1,9 +1,9 @@
-
 node_modules/
 .DS_Store
 .gitignore
 .eslintrc
 .npmignore
+docs
 
 # Ignore log files
 *.log

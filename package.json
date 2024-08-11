@@ -3,11 +3,12 @@
   "author": "Shafin",
   "version": "0.1.5",
   "description": "A CLI tool designed to streamline the creation of Node.js packages with built-in support for JavaScript/TypeScript and React/Next.js projects.",
-  "main": "./index.mjs",
+  "main": "./docs",
   "bin": {
     "create-espkg": "index.mjs"
   },
   "scripts": {
+    "build-docs": "cd ./docs && npm run build",
     "create-espkg": "node ./index.mjs",
     "prepublish": "npm run lint",
     "lint": "eslint ."

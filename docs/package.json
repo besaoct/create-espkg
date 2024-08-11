@@ -1,0 +1,32 @@
+{
+    "name": "create-espkg-doc",
+    "version": "0.0.1",
+    "description": "create-espkg doc",
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/besaoct/create-espkg.git"
+    },
+    "author": "Shafin",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/besaoct/create-espkg/issues"
+    },
+    "homepage": "https://github.com/besaoct/create-espkg#readme",
+    "dependencies": {
+        "lucide-react": "^0.427.0",
+        "next": "latest",
+        "nextra": "latest",
+        "nextra-theme-docs": "latest",
+        "react": "latest",
+        "react-dom": "latest"
+    },
+    "devDependencies": {
+        "@types/node": "^18.11.10",
+        "typescript": "^4.9.5"
+    }
+}

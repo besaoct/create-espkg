@@ -1,0 +1,51 @@
+## Templates
+
+### Creating a Package
+
+To create a new package, run the `create-espkg` command followed by the name of the directory where you want to create the package. If you don't provide a directory name, it will prompt you for a package name and create a folder with that name.
+
+```bash
+# Create a new package in a specified directory
+create-espkg your-package-name
+
+# Or, simply run the command and it will prompt you for the package name
+create-espkg
+```
+
+If you're using `npx`, the command will look like this:
+
+```bash
+# Create a new package using npx
+npx create-espkg your-package-name
+
+# Or, run npx and follow the prompts
+npx create-espkg
+```
+
+### Template Options
+
+After you initiate the command, you will be prompted to select a template. You can choose from the following options:
+
+1. **`javascript (with types)`**: This template sets up a basic JavaScript project with TypeScript support and includes tools like Jest for testing and esbuild for bundling.
+
+2. **`react-next (with types)`**: This template sets up a React project with Next.js and TypeScript, including all necessary dependencies and dev tools.
+
+### Example
+
+1. Run the command:
+
+    ```bash
+    create-espkg
+    ```
+
+    or using `npx`:
+
+    ```bash
+    npx create-espkg
+    ```
+
+2. Provide the requested information (package name, author name, and select a template).
+
+3. The tool will create a new directory with the package name, copy the template files, and install the required dependencies.
+
+4. Your new project is now ready to go!

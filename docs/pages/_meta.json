@@ -1,0 +1,15 @@
+{
+    "index": "Introduction",
+    "installation": "Installation",
+    "templates": "Templates",
+    "about": {
+      "title": "About",
+      "type": "page"
+    },
+    "contact": {
+      "title": "Contact ↗",
+      "type": "page",
+      "href": "https://linkedin.com/in/besaoct",
+      "newWindow": true
+    }
+  }
