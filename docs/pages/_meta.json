@@ -4,10 +4,6 @@
     "templates": "Templates",
     "publish":"Publish",
     
-    "about": {
-      "title": "About",
-      "type": "page"
-    },
     "contact": {
       "title": "Contact ↗",
       "type": "page",
