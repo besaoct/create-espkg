@@ -11,10 +11,7 @@ const config: DocsThemeConfig = {
   project: {
     link: 'https://github.com/besaoct/create-espkg',
   },
-  chat: {
-    icon: <MessageCircle/>,
-    link: 'https://linkedin.com/in/besaoct',
-  },
+
   docsRepositoryBase: 'https://github.com/besaoct/create-espkg/docs',
   footer: {
     text: '©️ Shafin (@besaoct)',
